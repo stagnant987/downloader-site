@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YT & TikTok Downloader — Téléchargez vos vidéos</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #0d1117;
+      color: #fff;
+      min-height: 100vh;
+    }
+
+    header {
+      background: #161b22;
+      padding: 20px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid #30363d;
+    }
+
+    header h1 {
+      font-size: 1.4rem;
+      color: #ff3c5c;
+    }
+
+    header span {
+      background: #ff3c5c;
+      color: #fff;
+      padding: 6px 16px;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      font-weight: bold;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 80px 20px 60px;
+    }
+
+    .hero h2 {
+      font-size: 3rem;
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+
+    .hero h2 span {
+      color: #ff3c5c;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      color: #8b949e;
+      max-width: 600px;
+      margin: 0 auto 40px;
+    }
+
+    .platforms {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-bottom: 50px;
+      flex-wrap: wrap;
+    }
+
+    .platform {
+      background: #161b22;
+      border: 1px solid #30363d;
+      border-radius: 12px;
+      padding: 12px 24px;
+      font-size: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .platform img {
+      width: 24px;
+      height: 24px;
+    }
+
+    .price-box {
+      background: linear-gradient(135deg, #161b22, #1c2333);
+      border: 2px solid #ff3c5c;
+      border-radius: 20px;
+      padding: 50px 40px;
+      max-width: 450px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .price-box .old-price {
+      color: #8b949e;
+      text-decoration: line-through;
+      font-size: 1.1rem;
+    }
+
+    .price-box .price {
+      font-size: 4rem;
+      font-weight: 900;
+      color: #ff3c5c;
+      margin: 10px 0;
+    }
+
+    .price-box .price span {
+      font-size: 1.5rem;
+      vertical-align: super;
+    }
+
+    .price-box .sub {
+      color: #8b949e;
+      margin-bottom: 30px;
+      font-size: 0.95rem;
+    }
+
+    .paypal-btn {
+      width: 100%;
+    }
+
+    .paypal-btn input[type="submit"],
+    .paypal-btn button {
+      width: 100%;
+      background: #ff3c5c;
+      color: white;
+      border: none;
+      padding: 18px;
+      font-size: 1.2rem;
+      font-weight: bold;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: background 0.2s;
+      letter-spacing: 1px;
+    }
+
+    .paypal-btn input[type="submit"]:hover,
+    .paypal-btn button:hover {
+      background: #e0334f;
+    }
+
+    .secure {
+      margin-top: 15px;
+      color: #8b949e;
+      font-size: 0.85rem;
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      max-width: 900px;
+      margin: 80px auto;
+      padding: 0 20px;
+    }
+
+    .feature {
+      background: #161b22;
+      border: 1px solid #30363d;
+      border-radius: 16px;
+      padding: 30px;
+    }
+
+    .feature .icon {
+      font-size: 2rem;
+      margin-bottom: 15px;
+    }
+
+    .feature h3 {
+      font-size: 1.1rem;
+      margin-bottom: 10px;
+    }
+
+    .feature p {
+      color: #8b949e;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    .faq {
+      max-width: 700px;
+      margin: 0 auto 80px;
+      padding: 0 20px;
+    }
+
+    .faq h2 {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 40px;
+    }
+
+    .faq-item {
+      background: #161b22;
+      border: 1px solid #30363d;
+      border-radius: 12px;
+      padding: 20px 25px;
+      margin-bottom: 15px;
+    }
+
+    .faq-item h4 {
+      font-size: 1rem;
+      margin-bottom: 10px;
+      color: #ff3c5c;
+    }
+
+    .faq-item p {
+      color: #8b949e;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      border-top: 1px solid #30363d;
+      color: #8b949e;
+      font-size: 0.85rem;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>YT & TikTok Downloader</h1>
+    <span>1,99 € seulement</span>
+  </header>
+
+  <section class="hero">
+    <h2>Téléchargez vos vidéos<br><span>en un seul clic</span></h2>
+    <p>YouTube, TikTok, Instagram, Twitter — toutes vos vidéos téléchargées instantanément sur votre PC.</p>
+
+    <div class="platforms">
+      <div class="platform">▶ YouTube</div>
+      <div class="platform">♪ TikTok</div>
+      <div class="platform">📷 Instagram</div>
+      <div class="platform">✦ Twitter</div>
+    </div>
+
+    <div class="price-box">
+      <div class="old-price">9,99 €</div>
+      <div class="price"><span>€</span>1,99</div>
+      <div class="sub">Paiement unique • Licence à vie • Windows</div>
+
+      <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" class="paypal-btn">
+        <input type="hidden" name="cmd" value="_xclick">
+        <input type="hidden" name="business" value="thnld201@gmail.com">
+        <input type="hidden" name="item_name" value="YT & TikTok Downloader - Licence à vie">
+        <input type="hidden" name="amount" value="1.99">
+        <input type="hidden" name="currency_code" value="EUR">
+        <input type="hidden" name="return" value="https://ton-site.vercel.app/success.html">
+        <input type="hidden" name="cancel_return" value="https://ton-site.vercel.app">
+        <input type="submit" value="🛒 ACHETER MAINTENANT — 1,99 €">
+      </form>
+
+      <div class="secure">🔒 Paiement sécurisé via PayPal</div>
+    </div>
+  </section>
+
+  <section class="features">
+    <div class="feature">
+      <div class="icon">⚡</div>
+      <h3>Téléchargement rapide</h3>
+      <p>Collez l'URL, choisissez le format et téléchargez en quelques secondes.</p>
+    </div>
+    <div class="feature">
+      <div class="icon">🎬</div>
+      <h3>MP4 & MP3</h3>
+      <p>Téléchargez en vidéo HD ou extrayez uniquement l'audio en MP3.</p>
+    </div>
+    <div class="feature">
+      <div class="icon">🖥️</div>
+      <h3>Application Windows</h3>
+      <p>Interface simple et intuitive. Aucune compétence technique requise.</p>
+    </div>
+    <div class="feature">
+      <div class="icon">♾️</div>
+      <h3>Licence à vie</h3>
+      <p>Payez une seule fois, utilisez pour toujours. Pas d'abonnement.</p>
+    </div>
+  </section>
+
+  <section class="faq">
+    <h2>Questions fréquentes</h2>
+    <div class="faq-item">
+      <h4>Comment je reçois l'application ?</h4>
+      <p>Après le paiement PayPal, vous êtes automatiquement redirigé vers la page de téléchargement.</p>
+    </div>
+    <div class="faq-item">
+      <h4>Sur quoi ça fonctionne ?</h4>
+      <p>L'application fonctionne sur Windows 10 et Windows 11.</p>
+    </div>
+    <div class="faq-item">
+      <h4>C'est un abonnement ?</h4>
+      <p>Non. Vous payez 1,99 € une seule fois et l'application est à vous pour toujours.</p>
+    </div>
+    <div class="faq-item">
+      <h4>Est-ce sécurisé ?</h4>
+      <p>Oui. Le paiement est traité par PayPal, leader mondial du paiement en ligne.</p>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 YT & TikTok Downloader — Tous droits réservés</p>
+  </footer>
+
+</body>
+</html>
